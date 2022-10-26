@@ -1,56 +1,81 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(MyApp());
 }
 
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 228, 243, 245),
+        backgroundColor: Color.fromARGB(255, 241, 239, 239),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 50.0,
+              radius: 60.0,
               backgroundColor: Colors.white,
               backgroundImage: AssetImage("assets/images/imagen2.png"),
             ),
-            Divider(),
-            Card(
-              margin: EdgeInsets.all(10.0),
-              child: ListTile(
-                title: Text("Email adress"),
-                subtitle: Text("Username@gmail.comm"),
-                leading: Icon(Icons.email, color: Color.fromARGB(255, 0, 0, 0)),
-              ),
+            SizedBox(
+              height: 90.0,
+            ),
+            Divider(
+              thickness: 0.70,
+              color: Colors.white38,
+              indent: 20.0,
+              endIndent: 85.0,
             ),
             Card(
-              margin: EdgeInsets.all(10.0),
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
               child: ListTile(
-                title: Text("Passwordd"),
-                subtitle: Text("..............."),
-                leading: Icon(Icons.password_outlined,
-                    color: Color.fromARGB(255, 17, 17, 17)),
-                trailing: Icon(Icons.remove_red_eye_sharp),
+                title: Text("Email Address"),
+                subtitle: Text("Username@gmail.com"),
+                leading: Icon(Icons.mail),
               ),
             ),
+            SizedBox(
+              width: 50.0,
+            ),
             Card(
-              child: Container(
-                child: Column(
-                  children: [
-                    ListTile(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Myapp()),
-                        );
-                      },
-                    ),
-                  ],
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+              child: ListTile(
+                title: Text("Password"),
+                subtitle: Text("*"),
+                leading: Icon(
+                  Icons.lock,
+                ),
+                trailing: Icon(Icons.remove_red_eye),
+              ),
+            ),
+            SizedBox(
+              width: 50.0,
+            ),
+            Card(
+              color: Color.fromARGB(255, 2, 42, 74),
+              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+              child: Center(
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                      //Tamaño Letra
+                      fontSize: 30,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+              child: Text(
+                "Signup                            Forgot Password?",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 138, 134, 134),
                 ),
               ),
             ),
